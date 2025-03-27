@@ -4,7 +4,7 @@ const addRecord = async (req, res) => {
     try {
       const { year, make, model, odometer, specifications, wholesale, retail } = req.body;
   
-      if (!year || !make || !model || !odometer || !specifications || !wholesale || !retail) {
+      if (!year || !make || !model || !odometer  || !wholesale || !retail) {
         return res.status(400).json({ error: "All fields are required." });
       }
   
@@ -20,7 +20,7 @@ const addRecord = async (req, res) => {
         make,
         model,
         odometer: String(odometer),
-        specifications,
+        specifications:specifications?specifications:"-",
         wholesale_low: wholesaleParts[0].trim(),
         wholesale_high: wholesaleParts[1].trim().split(" ")[0],
         retail_low: retailParts[0].trim(),
