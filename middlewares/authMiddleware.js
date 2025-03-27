@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
   const authHeader = req.header("Authorization");
-
+const JWT_SECRET="your_jwt_secret_key"
   if (!authHeader) {
     return res.status(401).json({ message: "No token, authorization denied" });
   }
@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
     : authHeader;
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, JWT_SECRET);
     req.user = decoded;
     next();
   } catch (error) {
