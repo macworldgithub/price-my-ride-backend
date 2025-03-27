@@ -1,10 +1,10 @@
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  service: "gmail", // You can change this to your email provider
+  service: "gmail", 
   auth: {
-    user: "flint.teams@gmail.com", // Your email
-    pass: 'vmlv hdmo qkxg nxcm', // Your email password or app password
+    user: "flint.teams@gmail.com",
+    pass: 'vmlv hdmo qkxg nxcm', 
   },
 });
 
@@ -67,7 +67,7 @@ const SendEmail = async (req, res) => {
         const mailOptions = {
           from: "flint.teams@gmail.com",
           to: "talalmacworld@gmail.com", 
-          subject: "🚗 Car Selling Request",
+          subject: "Car Selling Request",
           html: GetEmailTemplate(name,email,phone,modal,make,odometer,buildYear,specs),
         };
   
