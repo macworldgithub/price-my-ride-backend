@@ -6,6 +6,7 @@ const dotenv = require('dotenv');
 const authRoutes = require("./routers/authRoutes");
 const recordRoutes = require("./routers/recordRoutes");
 const PredictPriceRouter = require('./routers/predictPriceRoutes');
+const EmailRouter = require('./routers/emailRoute');
 const morgan = require("morgan");
 
 connectDB();
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use('/api', PredictPriceRouter);
 app.use("/api/auth", authRoutes);
 app.use("/api/record", recordRoutes);
+app.use("/api/email", EmailRouter);
 
 
 app.get('/', (req, res) => {

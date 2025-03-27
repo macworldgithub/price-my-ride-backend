@@ -39,7 +39,7 @@ const addRecord = async (req, res) => {
 
 const getAllRecords = async (req, res) => {
   try {
-    const {page=1,limit=2}=req.query
+    const {page=1,limit=10}=req.query
         let offset=(page-1)*limit
     const records = await Record.find().skip(offset).limit(limit);
     const total = await Record.countDocuments()
