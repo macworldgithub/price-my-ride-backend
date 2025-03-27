@@ -8,29 +8,31 @@ const recordRoutes = require("./routers/recordRoutes");
 const PredictPriceRouter = require('./routers/predictPriceRoutes');
 const EmailRouter = require('./routers/emailRoute');
 const morgan = require("morgan");
+const app = express();
 
 connectDB();
+console.log(process.env.MONGO_URI,"LLO")
+console.log(process.env.XAI_API_URL,"LLO")
 
-const app = express();
-const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(
-    cors({
+  cors({
       origin: "*",
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       allowedHeaders: ["Content-Type", "Authorization"],
     })
   );
-app.use(morgan("dev"));
-app.use(express.json());
+  app.use(morgan("dev"));
+  app.use(express.json());
 
-// Routes
-app.use('/api', PredictPriceRouter);
-app.use("/api/auth", authRoutes);
-app.use("/api/record", recordRoutes);
-app.use("/api/email", EmailRouter);
-
+  // Routes
+  app.use('/api', PredictPriceRouter);
+  app.use("/api/auth", authRoutes);
+  app.use("/api/record", recordRoutes);
+  app.use("/api/email", EmailRouter);
+  
+  const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
     res.send('Welcome to the API Server');
