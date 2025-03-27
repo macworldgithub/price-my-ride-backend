@@ -66,7 +66,7 @@ const SendEmail = async (req, res) => {
    
         const mailOptions = {
           from: "flint.teams@gmail.com",
-          to: "talalzafar84@gmail.com", 
+          to: "talalmacworld@gmail.com", 
           subject: "🚗 Car Selling Request",
           html: GetEmailTemplate(name,email,phone,modal,make,odometer,buildYear,specs),
         };
