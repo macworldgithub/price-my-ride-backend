@@ -76,8 +76,8 @@ const PredictPrice = async (req, res) => {
           "make": "${make}",
           "model": "${model}",
           "year": ${year},
-          "retail_price": "XXXXX - XXXXX AUD",
-          "wholesale_price": "XXXXX - XXXXX AUD",
+          "retail_price": "XXXXX - XXXXX $",
+          "wholesale_price": "XXXXX - XXXXX $",
           "market_trends": "Increasing / Decreasing / Stable"
         }
         \`\`\`
@@ -91,7 +91,8 @@ const PredictPrice = async (req, res) => {
         });
         
 const extractedData = extractJson(completion.choices[0].message);
-        return res.json({
+        
+return res.json({
             make,
             model,
             year,
