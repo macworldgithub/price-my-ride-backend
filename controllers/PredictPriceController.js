@@ -76,8 +76,8 @@ const PredictPrice = async (req, res) => {
           "make": "${make}",
           "model": "${model}",
           "year": ${year},
-          "retail_price": "XXXXX - XXXXX $",
-          "wholesale_price": "XXXXX - XXXXX $",
+          "retail_price": "$ XX,XXX - $ XX,XXX",
+          "wholesale_price": "$ XX,XXX - $ XX,XXX",
           "market_trends": "Increasing / Decreasing / Stable"
         }
         \`\`\`
