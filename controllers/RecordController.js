@@ -21,10 +21,10 @@ const addRecord = async (req, res) => {
         model,
         odometer: String(odometer),
         specifications:specifications?specifications:"-",
-        wholesale_low: wholesaleParts[0].trim().split(" ")[1],
-        wholesale_high: wholesaleParts[1].trim().split(" ")[1],
-        retail_low: retailParts[0].trim().split(" ")[1],
-        retail_high: retailParts[1].trim().split(" ")[1],
+        wholesale_low: wholesaleParts[0].trim().split("$")[1],
+        wholesale_high: wholesaleParts[1].trim().split("$")[1],
+        retail_low: retailParts[0].trim().split("$")[1],
+        retail_high: retailParts[1].trim().split("$")[1],
       };
   
       const newRecord = new Record(data);
