@@ -1,18 +1,12 @@
 const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
-  service: "gmail", 
-  host: "smtp.gmail.com",
-  port: 465,
-  debug:true,
-  logger:true,
-  secure: true,
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER, // Your email
     pass: process.env.EMAIL_PASS, // Your email password or app password
   },
 });
-console.log(process.env.EMAIL_USER,"apap")
 
 const GetEmailTemplate = (name, email, phone, model, make, odometer, buildYear, specs) => {
   return `
