@@ -15,6 +15,7 @@ router.get(
   authMiddleware,
   getAllRecords
 );
+
 router.get(
   "/getRecordById",
   authMiddleware,
