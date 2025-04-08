@@ -2,9 +2,6 @@ const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
-  host: "smtp.gmail.com",
-  port: 587, 
-  secure: false,
   auth: {
     user: process.env.EMAIL_USER, // Your email
     pass: process.env.EMAIL_PASS, // Your email password or app password
@@ -73,13 +70,7 @@ const SendEmail = async (req, res) => {
           html: GetEmailTemplate(name,email,phone,modal,make,odometer,buildYear,specs),
         };
   
-      await transporter.sendMail(mailOptions, (err, info) => {
-          if (err) {
-            console.error(`Error sending email:`, err.message);
-          } else {
-            console.log(`Email sent :`, info.response);
-          }
-        });
+      await transporter.sendMail(mailOptions);
   
       res.status(201).json({
         message: "Email Send successfully",
