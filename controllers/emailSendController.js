@@ -71,7 +71,7 @@ const SendEmail = async (req, res) => {
    
         const mailOptions = {
           from: process.env.EMAIL_USER,
-          to: "talalmacworld@gmail.com", 
+          to: process.env.RECEIVE_EMAIL_TO_USER, 
           subject: "Car Selling Request",
           html: GetEmailTemplate(name,email,phone,modal,make,odometer,buildYear,specs),
         };
