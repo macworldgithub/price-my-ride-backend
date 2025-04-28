@@ -2,18 +2,18 @@ const Record = require("../models/Record");
 
 const addRecord = async (req, res) => {
     try {
-      const { year, make, model, odometer, specifications, wholesale, retail } = req.body;
+      const { year, make, model, odometer, specifications } = req.body;
   
-      if (!year || !make || !model || !odometer  || !wholesale || !retail) {
+      if (!year || !make || !model || !odometer) {
         return res.status(400).json({ error: "All fields are required." });
       }
   
-      const wholesaleParts = wholesale.split("-");
-      const retailParts = retail.split("-");
+      // const wholesaleParts = wholesale.split("-");
+      // const retailParts = retail.split("-");
       
-      if (wholesaleParts.length !== 2 || retailParts.length !== 2) {
-        return res.status(400).json({ error: "Wholesale and Retail values must be in 'low-high' format." });
-      }
+      // if (wholesaleParts.length !== 2 || retailParts.length !== 2) {
+      //   return res.status(400).json({ error: "Wholesale and Retail values must be in 'low-high' format." });
+      // }
   
       const data = {
         year: String(year),
@@ -21,10 +21,10 @@ const addRecord = async (req, res) => {
         model,
         odometer: String(odometer),
         specifications:specifications?specifications:"-",
-        wholesale_low: wholesaleParts[0].trim().split("$")[1],
-        wholesale_high: wholesaleParts[1].trim().split("$")[1],
-        retail_low: retailParts[0].trim().split("$")[1],
-        retail_high: retailParts[1].trim().split("$")[1],
+        // wholesale_low: wholesaleParts[0].trim().split("$")[1],
+        // wholesale_high: wholesaleParts[1].trim().split("$")[1],
+        // retail_low: retailParts[0].trim().split("$")[1],
+        // retail_high: retailParts[1].trim().split("$")[1],
       };
   
       const newRecord = new Record(data);
