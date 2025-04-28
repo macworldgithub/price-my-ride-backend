@@ -7,10 +7,10 @@ const RecordsSchema = new mongoose.Schema(
     model: { type: String, required: true },
     odometer: { type: String, required: true },
     specifications: { type: String, required: true },
-    wholesale_low: { type: String, required: true },
-    wholesale_high: { type: String, required: true },
-    retail_low: { type: String, required: true },
-    retail_high: { type: String, required: true },
+    // wholesale_low: { type: String, required: true },
+    // wholesale_high: { type: String, required: true },
+    // retail_low: { type: String, required: true },
+    // retail_high: { type: String, required: true },
   },
   { timestamps: true }
 );
