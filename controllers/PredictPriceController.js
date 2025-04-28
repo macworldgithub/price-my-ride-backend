@@ -23,10 +23,6 @@ const extractJson = (data) => {
     }
 };
 
-
-
-
-
 const client = new OpenAI({
     apiKey: "xai-pA9l7Tkegg7TN8mDJE6CBOyLXWRHFLgm9H23qg0ukmlo4QRTx1gUqhMkb66CSDQkdX3FFmgY9A6W2fpH",
     baseURL: "https://api.x.ai/v1",
@@ -73,12 +69,12 @@ const PredictPrice = async (req, res) => {
         ### **Strict Output Format (JSON Only)**  
         \`\`\`json
         {
-          "make": "${make}",
-          "model": "${model}",
-          "year": ${year},
-          "retail_price": "$ XX,XXX - $ XX,XXX",
-          "wholesale_price": "$ XX,XXX - $ XX,XXX",
-          "market_trends": "Increasing / Decreasing / Stable"
+        "make": "${make}",
+         "model": "${model}",
+        "year": ${year},
+         "retail_price": "$ XX,XXX - $ XX,XXX",
+         "wholesale_price": "$ XX,XXX - $ XX,XXX",
+         "market_trends": "Increasing / Decreasing / Stable"
         }
         \`\`\`
         
