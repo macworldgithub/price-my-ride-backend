@@ -28,7 +28,7 @@ const extractJson = (data) => {
 
 
 const client = new OpenAI({
-    apiKey: "xai-pA9l7Tkegg7TN8mDJE6CBOyLXWRHFLgm9H23qg0ukmlo4QRTx1gUqhMkb66CSDQkdX3FFmgY9A6W2fpH",
+    apiKey:  XAI_API_KEY,
     baseURL: "https://api.x.ai/v1",
 });
 
