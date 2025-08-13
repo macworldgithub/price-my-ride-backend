@@ -1,8 +1,6 @@
 const OpenAI = require('openai');
 require('dotenv').config();
 
-
-
 const XAI_API_KEY = process.env.XAI_API_KEY;
 const XAI_API_URL = process.env.XAI_API_URL;
 
