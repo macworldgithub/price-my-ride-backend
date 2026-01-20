@@ -47,7 +47,7 @@ const PredictPrice = async (req, res) => {
             return res.status(400).json({ error: 'odometer is required' });
         }
         const completion = await client.chat.completions.create({
-            model: "grok-2-latest",
+            model: "grok-3-latest",
             messages: [
                 {
                     role: "system",
